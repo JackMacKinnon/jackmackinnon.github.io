@@ -1,0 +1,264 @@
+/* GENERAL STYLING */
+
+/* Removes ring from mouse-clicking*/
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+  outline: none !important;
+}
+
+* {
+  font-family: 'Quicksand', Trebuchet MS;
+  font-color: #141B1D;
+  letter-spacing: 0.35px;
+}
+
+html, body {
+  background-color: #F8FBFF;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  letter-spacing: 0.4px;
+}
+
+div, footer, header, nav, section {
+  display: block;
+}
+
+nav{
+  float: right;
+}
+
+a:visited, a{
+  text-decoration: none;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li a{
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 5px;
+  padding-right: 10px;
+  top: 50%;
+}
+
+
+/* END OF GENERAL */
+/* HEADER STYLE */
+
+header{
+  background-color: #F7CAF1;
+  height: 70px;
+  margin-bottom: 3em;
+}
+
+.banner-container{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 25px;
+  padding-right: 2.5%;
+}
+
+.page-title{
+  position: absolute;
+  float: left;
+  line-height: 70px;
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+.page-title a:hover{
+  color: #95CAE2 !important;
+  text-decoration: none;
+}
+
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 70px;
+  width: 70px;
+}
+
+.header-links{
+  font-size: 1.4em;
+}
+
+button, .btn {
+    background: transparent;
+    border: 0px;
+}
+
+button:hover, .btn:hover {
+    cursor: pointer
+}
+
+.btn-no-outline:hover {
+    border: 0px solid;
+    margin: 0px;
+    color: #95CAE2;
+    font-weight: 700;
+    box-shadow: inset 51px 0 0 1px #1161ee;
+     -webkit-perspective: 1000;
+     -webkit-backface-visibility: hidden;
+}
+
+/* END OF HEADER */
+/* WEBPAGE PAGE STYLE */
+
+.page-content{
+  opacity: 1;
+  padding-right: 10%;
+  padding-left: 7.5%;
+  position: relative;
+  font-size: 1.2em;
+}
+
+.page-content a{
+  text-decoration: none;
+  color: #95CAE2;
+}
+
+.page-content a:hover{
+  text-decoration: none !important;
+  color: #95CAE2;
+}
+
+.page-content-inner-wrapper{
+  padding: 2%;
+  background-color: none;
+  position: relative;
+  display: flex;
+}
+
+.content{
+  width: auto !important;
+}
+
+/* END OF WEBPAGE */
+/* HOMEPAGE STYLE */
+
+.greeting-image-wrapper{
+  width: 30%;
+  float: right;
+}
+
+.greeting-image-space{
+  padding-top: 0;
+  padding-bottom: 20px;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+}
+
+.portrait{
+  max-width: 300px;
+  position: relative;
+}
+
+.homepage-text-wrapper{
+  width: 70%;
+  float: left;
+  padding-right: 10%;
+  margin-top: 1.2em;
+}
+
+.homepage-text{
+  padding-top: 0;
+  padding-bottom: 17px;
+  padding-left: 17px;
+  padding-right: 17;
+  clear: none;
+  position: relative;
+  height: auto;
+}
+
+.homepage-text>*first-child /*should only apply to first element after class .homepage-text*/{
+  margin-top: 0;
+  word-wrap: break-word;
+}
+
+/* END OF HOMEPAGE */
+/* ABOUT PAGE STYLE */
+
+.pre-content {
+    position: relative;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+/* END OF ABOUT PAGE*/
+/* FOOTER PAGE STYLE */
+
+.footer{
+  background-color: #F8FBFF;
+  padding-left: 10%;
+  padding-right: 5%;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-top: 1px solid;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.footer-wrapper{
+  margin-right: 4%;
+  display: inline-block;
+  float: right;
+  width: 100%;
+}
+
+.footer-inner-wrapper{
+  margin-left: -17px;
+  margin-right: -17px;
+  width: auto !important;
+}
+
+.footer-content{
+  width: 100% !important;
+  padding-right: 0;
+  float: right;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+.footer-icon-list{
+  text-align: left;
+}
+
+.footer-icon-list a{
+  margin: 0 0 0 0;
+  border-radius: 20%;
+  text-decoration: none;
+  display: inline-block;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 170ms
+    ease-in-out;
+}
+
+.icon{
+  width: 40px;
+}
+
+/* END OF FOOTER */

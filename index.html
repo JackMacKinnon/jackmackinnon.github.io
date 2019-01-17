@@ -5,10 +5,111 @@
   <title>Jack MacKinnon</title>
     <meta name="description" content="Personal website of Jack MacKinnon"/>
     <meta name="author" content="Jack MacKinnon"/>
-    <link rel="stylesheet" href="homepage.css"/>
+    <link rel="stylesheet" href="main.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"/>
 </head>
 <body>
-  <h1>First test at a live website!</h1>
+  <header class="banner">
+    <div class="banner-container">
+      <div class="page-title">
+        <a href="index.html" style="color: #141B1D;">Jack MacKinnon</a>
+      </div>
+      <nav>
+        <div class="nav-mobile">
+          <a id="nav-toggle" href="#!">
+            <span></span>
+          </a>
+        </div>
+        <ul class="header-links">
+          <li>
+            <a href="about.html">
+              <button class="btn-no-outline shadow-none">About</button>
+            </a>
+          </li>
+          <li>
+            <a href="work-experience.html">
+              <button class="btn-no-outline shadow-none">Work Experience</button>
+            </a>
+          </li>
+          <li>
+            <a href="projects.html">
+              <button class="btn-no-outline shadow-none">Projects</button>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="./standard_resume.pdf">
+              <button class="btn-no-outline shadow-none">Resume</button>
+            </a>
+          </li>
+          <li>
+            <a href="contact.html">
+              <button class="btn-no-outline shadow-none">Contact</button>
+            </a>
+          </li>
+        </nav>
+    </div>
+  </header>
+  <section class="page-content">
+  <div class="page-content-inner-wrapper">
+      <div class="content">
+        <div class="greeting-image-wrapper">
+          <div class="greeting-image-space">
+              <img class="portrait" src="./images/circular_portrait.png"/>
+          </div>
+        </div>
+        <div class="homepage-text-wrapper">
+          <div class="homepage-text">
+            <p>Hi, I'm Jack.&nbsp;</p>
+            <p>Mechatronics Engineering Student at the
+              <a target="_blank" href="https://uwaterloo.ca/">University of Waterloo</a>.
+            </p>
+            <p>
+              Searching to learn more about the world, the people that inhabit it
+              and the technology that drives it.
+            </p>
+            <p>
+              Captivated by elegant solutions to complex problems, automated
+              systems that reduce mundane work, artificial intellegence, wearable
+              technology and progress.
+            </p>
+            <p>
+              I am currently seeking an internship May-August 2019. If you'd
+              like to get in touch to discuss work opportunities, an idea, or
+              just tell me something interesting,
+              <a target="_blank" href="mailto:jack_mackinnon@hotmail.com">send me an e-mail</a>!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-wrapper">
+      <div class="footer-inner-wrapper">
+        <div class="footer-content">
+          <nav class="footer-icon-list">
+            <ul class="icon-list">
+              <li class="icon-outter-wrapper">
+                <a href="https://www.linkedin.com/in/jack-mackinnon/" target="_blank" class="icon-wrapper">
+                  <img class="icon" src="./images/LinkedIn_pink.png" onmouseover="this.src='./images/LinkedIn_blue.png';" onmouseout="this.src='./images/LinkedIn_pink.png';" />
+                </a>
+              </li>
+              <li class="icon-outter-wrapper">
+                <a href="https://github.com/JackMacKinnon" target="_blank" class="icon-wrapper">
+                  <img class="icon" src='./images/GitHub_pink.png' onmouseover="this.src='./images/GitHub_blue.png';" onmouseout="this.src='./images/GitHub_pink.png';" />
+                </a>
+              </li>
+                <li class="icon-outter-wrapper">
+                <a target="_blank" href="mailto:jack_mackinnon@hotmail.com" class="icon-wrapper">
+                  <img class="icon" src='./images/Email_pink.png' onmouseover="this.src='./images/Email_blue.png';" onmouseout="this.src='./images/Email_pink.png';" />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
