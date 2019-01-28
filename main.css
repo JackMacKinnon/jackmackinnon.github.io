@@ -12,10 +12,12 @@ body:not(.user-is-tabbing) textarea:focus {
   font-family: 'Quicksand', Trebuchet MS;
   font-color: #141B1D;
   letter-spacing: 0.35px;
+  margin: 0;
+  padding: 0;
 }
 
 html, body {
-  background-color: #F8FBFF;
+  background-color: #FDFEFF !important;
   margin: 0;
   width: 100%;
   height: 100%;
@@ -49,34 +51,29 @@ nav ul li {
 
 nav ul li a{
   display: block;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 5px;
-  padding-right: 10px;
-  top: 50%;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  padding-top: 0.75em;
 }
-
 
 /* END OF GENERAL */
 /* HEADER STYLE */
 
 header{
   background-color: #F7CAF1;
-  height: 70px;
-  margin-bottom: 3em;
+  height: 5em;
+  margin-bottom: 2em;
 }
 
 .banner-container{
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 25px;
-  padding-right: 2.5%;
+  max-width: 100%;
+  padding: 0 3em 3em;
 }
 
 .page-title{
-  position: absolute;
+  position: relative;
   float: left;
-  line-height: 70px;
+  line-height: 2.4em;
   text-transform: uppercase;
   font-size: 2em;
 }
@@ -88,15 +85,16 @@ header{
 
 .nav-mobile {
   display: none;
-  position: absolute;
+  position: relative;
   top: 0;
   right: 0;
-  height: 70px;
-  width: 70px;
+  height: 2em;
+  width: 2em;
 }
 
 .header-links{
   font-size: 1.4em;
+  line-height: 2.4em;
 }
 
 button, .btn {
@@ -109,8 +107,8 @@ button:hover, .btn:hover {
 }
 
 .btn-no-outline:hover {
-    border: 0px solid;
-    margin: 0px;
+    border: 0;
+    margin: 0;
     color: #95CAE2;
     font-weight: 700;
     box-shadow: inset 51px 0 0 1px #1161ee;
@@ -121,12 +119,103 @@ button:hover, .btn:hover {
 /* END OF HEADER */
 /* WEBPAGE PAGE STYLE */
 
+.pre-content {
+  opacity: 1;
+  padding-right: 10%;
+  padding-left: 10%;
+  position: relative;
+  font-size: 1.5em;
+  position: relative;
+  text-align: center;
+}
+
+.page-content-wrapper{
+  border-top: 4px solid;
+  border-color: #95CAE2;
+  padding-top: 1em;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.topic-heading{
+  color: #F7CAF1;
+  display: inline;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.topic-subheading{
+  color: #000000;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 0.8em;
+  padding: 0;
+  padding-bottom: 0.2em;
+  margin: 0;
+}
+
+.content-layout1{
+  max-height: 20em;
+  max-width: 36em;
+  text-align: right;
+  float: left;
+  padding-right: 1em;
+  overflow: scroll;
+  position: relative;
+}
+
+.content-image-space-layout1{
+  position: relative;
+  float: right;
+  display: flex;
+  width: 25em;
+  height: 20em;
+}
+
+.image-layout1{
+  width: auto;
+  max-width: 25em;
+  height: auto;
+  max-height: 20em;
+  position: relative;
+}
+
+.content-image-space-layout2{
+  position: relative;
+  float: left;
+  display: flex;
+  width: auto;
+  max-width: 25em;
+  height: auto;
+  max-height: 20em;
+}
+
+.image-layout2{
+  width: auto;
+  max-width: 25em;
+  height: auto;
+  max-height: 20em;
+  position: relative;
+}
+
+.content-layout2{
+  max-height: 20em;
+  max-width: 36em;
+  text-align: left;
+  float: right;
+  padding-left: 1em;
+  overflow: scroll;
+  position: relative;
+}
+
 .page-content{
   opacity: 1;
   padding-right: 10%;
-  padding-left: 7.5%;
+  padding-left: 10%;
   position: relative;
   font-size: 1.2em;
+  height: auto;
 }
 
 .page-content a{
@@ -144,14 +233,37 @@ button:hover, .btn:hover {
   background-color: none;
   position: relative;
   display: flex;
+  height: auto;
+  max-height: 50%;
 }
 
-.content{
-  width: auto !important;
+.content-images{
+  max-width: 25em;
+  position: relative;
+  display: none;
+}
+
+.w3-left, .w3-right, .w3-badge {
+  cursor:pointer;
+}
+
+.w3-badge {
+  height: 1em;
+  width: 1em;
+  padding: 0;
 }
 
 /* END OF WEBPAGE */
 /* HOMEPAGE STYLE */
+
+.homepage-content{
+  opacity: 1;
+  padding-right: 10%;
+  padding-left: 10%;
+  position: relative;
+  font-size: 1.2em;
+  min-height: 76.8%;
+}
 
 .greeting-image-wrapper{
   width: 30%;
@@ -167,7 +279,7 @@ button:hover, .btn:hover {
 }
 
 .portrait{
-  max-width: 300px;
+  max-width: 15em;
   position: relative;
 }
 
@@ -180,12 +292,10 @@ button:hover, .btn:hover {
 
 .homepage-text{
   padding-top: 0;
-  padding-bottom: 17px;
   padding-left: 17px;
   padding-right: 17;
   clear: none;
   position: relative;
-  height: auto;
 }
 
 .homepage-text>*first-child /*should only apply to first element after class .homepage-text*/{
@@ -196,58 +306,44 @@ button:hover, .btn:hover {
 /* END OF HOMEPAGE */
 /* ABOUT PAGE STYLE */
 
-.pre-content {
-    position: relative;
-    text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-}
+
 
 /* END OF ABOUT PAGE*/
+
 /* FOOTER PAGE STYLE */
 
 .footer{
-  background-color: #F8FBFF;
-  padding-left: 10%;
+  background-color: #F7F7F7;
+  border-top: 4px solid;
+  border-color: #95CAE2;
+  position: relative;
+  padding-left: 5%;
   padding-right: 5%;
-  padding-top: 0;
-  padding-bottom: 0;
-  border-top: 1px solid;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
+  clear: both;
 }
 
 .footer-wrapper{
   margin-right: 4%;
   display: inline-block;
-  float: right;
   width: 100%;
 }
 
-.footer-inner-wrapper{
-  margin-left: -17px;
-  margin-right: -17px;
-  width: auto !important;
-}
-
-.footer-content{
-  width: 100% !important;
-  padding-right: 0;
-  float: right;
-  padding-bottom: 0px;
-  padding-top: 0px;
+.footer-content p{
+  float: left;
+  position: relative;
+  display: flex;
+  text-align: left;
+  padding-top: 1em;
 }
 
 .footer-icon-list{
   text-align: left;
+  float: right;
 }
 
 .footer-icon-list a{
   margin: 0 0 0 0;
-  border-radius: 20%;
   text-decoration: none;
   display: inline-block;
   justify-content: space-between;
@@ -262,3 +358,94 @@ button:hover, .btn:hover {
 }
 
 /* END OF FOOTER */
+/* EDUCATION PAGE STYLE */
+
+.pre-education-wrapper::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.education-pannel{
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+#edu_icon{
+  max-width: 25em;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.fade_text-wrapper{
+  transition: .5s ease;
+  opacity: 0;
+  position: relative;
+  top: 40%;
+  left: 60%;
+  transform: translate(12.5%, 100%);
+  -ms-transform: translate(-50%, -40%);
+  text-align: center;
+}
+
+.fade_text{
+  background-color: #000;
+  color: white;
+  font-size: 16px;
+  padding: 1em 0.8em;
+  width: 8em;
+  height: auto;
+}
+
+.education-pannel:hover .fade_text-wrapper{
+  opacity: 1;
+}
+
+#edu_icon:hover{
+  opacity: 0.4;
+}
+
+@media screen and (max-width: 500px) {
+  .education-pannel{
+    width: 100%;
+  }
+}
+
+/* CONTACT PAGE STYLE */
+
+.contact-content{
+  padding: 6em 0 0 16.5em;
+  text-align: left;
+  position: relative;
+  min-height: 76.85%;
+  white-space:nowrap
+}
+
+.contact-content a{
+  color: #141B1D;
+  text-decoration: none;
+}
+
+.contact-content a:hover{
+  color: #95CAE2 !important;
+  text-decoration: none;
+}
+
+.contact-content p{
+  font-size: 1.5em;
+  align: left;
+  display: inline;
+  position: relative;
+}
+
+.contact_icon{
+  width: 2.5em;
+  align: left;
+  display: inline;
+  text-decoration: none !important;
+}
+
+a:hover .contact_icon{
+  text-decoration: none !important;
+}

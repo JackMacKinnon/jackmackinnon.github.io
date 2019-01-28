@@ -7,6 +7,7 @@
     <meta name="author" content="Jack MacKinnon"/>
     <link rel="stylesheet" href="main.css"/>
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="w3.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"/>
 </head>
 <body>
@@ -27,8 +28,13 @@
               <button class="btn-no-outline shadow-none">About</button>
             </a>
           </li>
+          <!--li>
+            <a href="education.html">
+              <button class="btn-no-outline shadow-none">Education</button>
+            </a>
+          </li-->
           <li>
-            <a href="work-experience.html">
+            <a href="#">
               <button class="btn-no-outline shadow-none">Work Experience</button>
             </a>
           </li>
@@ -50,41 +56,265 @@
         </nav>
     </div>
   </header>
+  <div class="pre-content">
+    <p>All about who I've worked for and what I've done&nbsp;</p>
+  </div>
   <section class="page-content">
     <div class="page-content-inner-wrapper">
-      <div class="pre-content">
-        <p>Work Experience page under construction!!&nbsp;</p>
-        <p>Applications are time consuming..&nbsp;</p>
-        <p>01.25.2019.</p>
+      <div class="page-content-wrapper">
+        <div class="content-layout1">
+          <p class="topic-heading">Teledyne DALSA</p>
+          <p class="topic-subheading">Research and Development Engineer - 09/18-12/18</p>
+          <p>
+            My most recent work placement was at <a target="_blank" href="https://www.teledynedalsa.com/en/">Teledyne DALSA</a>
+            working to automate their testing process of infrared sensors.
+          </p>
+          <p>
+            Sensors take far too long to test - ~90 sensors can be tested in a week
+            if an operator is absolutely perfect at testing a set (and nothing breaks).
+            I decided to begin to develop the testing automation for the pre-testing
+            phase. A <a target="_blank" href="https://www.universal-robots.com/products/ur3-robot/">Universal Robots' UR3</a>
+            has been installed in the lab with a
+            <a target="_blank" href="https://robotiq.com/">RobotIQ</a> gripper to work with.
+          </p>
+          <p>
+            Without going into too much detail, I drafted a development plan that
+            lays out a step-by-step process on how to incrementally improve pre-testing,
+            leading to a fully automated testing sequence.
+          </p>
+          <p>
+            The crux of the problem is to extract an identifying label off the
+            sensor and match that with a serial number on the ceramic backing of
+            the sensor. The label on the sensor is a few hundred microns in length
+            and width. To the naked eye, it looks like an tiny metal dent on the
+            face of the sensor. The ID is unique for a batch of sensors and is a
+            pairing of <em>"A-N"</em> and <em>"1-18"</em>.
+          </p>
+          <p>
+            I used a <a target="_blank" href="https://www.dino-lite.com/">Dino-lite</a>,
+            a digital microscope, to view the sensor ID's. I then mounted it on a
+            <a target="_blank" href="https://www.universal-robots.com/products/ur3-robot/">UR3</a>
+            for portability within its workspace. This allows the microscope to be
+            reliably be manipulated to resolve an ID on a newly-placed sensor. A
+            basic movement pattern was created for the UR3, enabling it to move
+            from sensor to sensor within a tray.
+          </p>
+          <p>
+            Sensors are placed in a 7x7 tray with "uniform" spacing, however,
+            manufacturing tolerances prevent exact uniformity. At ~140x magnification,
+            the small things matter. Movements expressed with precision down to a
+            few hundredths of a millimetre are still not accurate enough to overcome
+            tray tolerances and tray rotation.
+          </p>
+          <p>
+            To solve this problem, I used OpenCV's template matching. A typical
+            frame that the microscope observes consists of the sensor ID, a
+            Teledyne DALSA logo/trademark, the edge of the cap that protects the
+            wires and the actual CMOS sensor. The idea is, if you run a template match
+            on a typical frame with a standard ID as a template, it should
+            match to the ID within the frame, regardless if they have common letters
+            or digits it will be <em>most alike the template</em>.
+          </p>
+          <p>
+            Assuming an accurate match, the centre of the match is extracted, the
+            pixel-to-spatial mapping is calculated and the UR3 corrects its position
+            to place the ID in the center of the frame. Now, moving from one device
+            to another, the odds of the ID on the next sensor being in frame are
+            extremely high.
+          </p>
+          <p>
+            A big issue with template matching is that it struggles when there is a
+            rotation in the source image in comparison to a template. To solve this,
+            I decided to leverage the straight-edge nature of the CMOS sensor or
+            cap's edge. In doing so, you can use the dot product with a vertical
+            line (0, 1) to find your angle of rotation. OpenCV functions houghLinesP()
+            proved very effective in locating edges.
+          </p>
+          <p>
+            I also made a testing-framework/pseudo-optimizing program to test the
+            effectiveness of this solution. It generated millions of unique combinations
+            of parameter inputs and tested them against a set of test data. Combinations
+            "scoring" a higher-than or equal-to match rate than the previous best
+            combination is outputted to a text file. Many 100% success rates were found.
+          </p>
+          <p>
+            I am mostly proud of this project because of how many roadblocks it
+            came across and how quickly robust, elegant and modular solutions were
+            drawn up to meet said roadblocks. I'm sure you have questions, or want
+            to hear more, so <a target="_blank" href="mailto:jack_mackinnon@hotmail.com">contact me</a>!
+          </p>
+        </div>
+        <div class="content-image-space-layout1">
+          <img class="dalsa_imgs" src='./images/Work_Experiences/Teledyne_DALSA/Teledyne_Logo.png' style="max-width:25em" style="display:none" style="position:relative"/>
+          <img class="dalsa_imgs" src='./images/Work_Experiences/Teledyne_DALSA/Teledyne_sensor.png' style="max-width:25em" style="display:none" style="position:relative"/>
+          <img class="dalsa_imgs" src='./images/Work_Experiences/Teledyne_DALSA/UR3_render.png' style="max-width:25em" style="display:none" style="position:relative"/>
+          <img class="dalsa_imgs" src='./images/Work_Experiences/Teledyne_DALSA/Dinolite.png' style="max-width:25em" style="display:none" style="position:relative"/>
+          <div class="w3-center w3-container w3-section w3-large w3-text-black w3-display-bottommiddle" style="width:100%">
+            <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1, 2)">&#10094;</div>
+            <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1, 2)">&#10095;</div>
+            <span class="w3-badge dalsa_bul w3-border w3-transparent w3-hover-pink" onclick="currentDiv(1, 2)"></span>
+            <span class="w3-badge dalsa_bul w3-border w3-transparent w3-hover-pink" onclick="currentDiv(2, 2)"></span>
+            <span class="w3-badge dalsa_bul w3-border w3-transparent w3-hover-pink" onclick="currentDiv(3, 2)"></span>
+            <span class="w3-badge dalsa_bul w3-border w3-transparent w3-hover-pink" onclick="currentDiv(4, 2)"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="page-content">
+    <div class="page-content-inner-wrapper">
+      <div class="page-content-wrapper">
+        <div class="content-image-space-layout2">
+          <img class="stac_imgs" src='./images/Work_Experiences/STAC/STAC_bike.png' style="max-width:25em" style="display:none" style="position:relative"/>
+          <img class="stac_imgs" src='./images/Work_Experiences/STAC/STAC_zero_halcyon.png' style="max-width:25em" style="display:none" style="position:relative"/>
+          <div class="w3-center w3-container w3-section w3-large w3-text-black w3-display-bottommiddle" style="width:100%">
+            <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1, 1)">&#10094;</div>
+            <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1, 1)">&#10095;</div>
+            <span class="w3-badge stac_bul w3-border w3-transparent w3-hover-pink" onclick="currentDiv(1, 1)"></span>
+            <span class="w3-badge stac_bul w3-border w3-transparent w3-hover-pink" onclick="currentDiv(2, 1)"></span>
+          </div>
+        </div>
+        <div class="content-layout2">
+          <p class="topic-heading">STAC Performance</p>
+          <p class="topic-subheading">Analytical and Process Engineer - 01/18-04/18</p>
+          <p>
+            My first coop term was spent at <a target="_blank" href="https://www.staczero.com">STAC
+            Performance</a>. STAC is a small start-up whose main product is a bike
+            trainer, the <em>STAC Zero</em>.
+          </p>
+          <p>
+            What makes STAC unique in the cycling space is the fact that their
+            trainer uses <a target="_blank" href="https://en.wikipedia.org/wiki/Eddy_current">
+            Eddy Currents</a> to generate resistance. This distinction is important
+            because Eddy Currents do not generate any sound. This is huge for
+            customers in apartment buildings and close/shared spaces.
+          </p>
+          <p>
+            The project I took upon myself was to take an idea and develop a new
+            training technology that analyzes the perceived effort of an athlete.
+            Perceived effort is important for training, because it determines the
+            day-to-day effort the athlete puts into their training.
+          </p>
+          <p>
+            The hardware involves an <a target="_blank" href="https://www.arduino.cc/">Arduino</a>,
+            a spring-board and a pulse oximeter. The software is arranged into
+            two different classes in C++, heart-beats and breaths. Because I was just
+            prototyping, the system worked off-line; data is extracted from the
+            oximeter, stored in a text file, then gets processed and analyzed by
+            the C++ code.
+          </p>
+          <p>
+            The data gets processed in queues of 100; as a new value is added in
+            the first value gets popped off the front. This keeps the ability to
+            calculate the working average of the queue, which is helpful for
+            determining which way the data is changing; ie. exhalation or inhalation.
+          </p>
+          <p>
+            For debugging the code, I used debugging tools within the IDE, the terminal
+            and graph plotting/analysis in Excel/Google sheets.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="page-content">
+    <div class="page-content-inner-wrapper">
+      <div class="page-content-wrapper">
+        <div class="content-layout1">
+          <p class="topic-heading">Toyota Motor Manufacturing Canada</p>
+          <p class="topic-subheading">Team Member - 05/16-09/16</p>
+          <p>
+            The summer before my first year of university I worked in an automotive
+            manufacturing plant for a little company you may have heard of... Toyota.
+            <a target="_blank" href="https://www.tmmc.ca/en">Toyota Motor Manufacturing Canada</a>
+            has a plant located in Cambridge, Ontario, quite close to my home in
+            Kitchener.
+          </p>
+          <p>
+            I was working in the paint shop on the
+            <a target="_blank" href="https://www.lexus.ca/lexus/en/automobiles/rx">Lexus RX350</a>.
+            It was my responsibility to apply the blackout tape that goes underneath
+            the trim around the windows of the right and left rear doors. In addition,
+            I also worked in the inspection tunnel, examining the hood and hatch of
+            the vehicle for defects.
+          </p>
+          <p>
+            I think it goes without saying that this wasn't my favorite job of all
+            time. But I stuck with it, did what was required of me, and did it well.
+            Four and a half months flew by me and before I knew it, the summer was
+            over, and so was my career with working on a factory line.
+          </p>
+        </div>
+        <div class="content-image-space-layout1">
+          <img class="tmmc_imgs" src='./images/Work_Experiences/TMMC/TMMC_logo.png' style="max-width:25em" style="display:none" style="position:relative"/>
+          <img class="tmmc_imgs" src='./images/Work_Experiences/TMMC/Lexus_rx350.png' style="max-width:25em" style="display:none" style="position:relative"/>
+          <div class="w3-center w3-container w3-section w3-large w3-text-black w3-display-bottommiddle" style="width:100%">
+            <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1, 0)">&#10094;</div>
+            <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1, 0)">&#10095;</div>
+            <span class="w3-badge tmmc_bul w3-border w3-transparent w3-hover-pink" onclick="currentDiv(1, 0)"></span>
+            <span class="w3-badge tmmc_bul w3-border w3-transparent w3-hover-pink" onclick="currentDiv(2, 0)"></span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
   <footer class="footer">
     <div class="footer-wrapper">
-      <div class="footer-inner-wrapper">
-        <div class="footer-content">
-          <nav class="footer-icon-list">
-            <ul class="icon-list">
-              <li class="icon-outter-wrapper">
-                <a href="https://www.linkedin.com/in/jack-mackinnon/" target="_blank" class="icon-wrapper">
-                  <img class="icon" src="./images/LinkedIn_pink.png" onmouseover="this.src='./images/LinkedIn_blue.png';" onmouseout="this.src='./images/LinkedIn_pink.png';" />
-                </a>
-              </li>
-              <li class="icon-outter-wrapper">
-                <a href="https://github.com/JackMacKinnon" target="_blank" class="icon-wrapper">
-                  <img class="icon" src='./images/GitHub_pink.png' onmouseover="this.src='./images/GitHub_blue.png';" onmouseout="this.src='./images/GitHub_pink.png';" />
-                </a>
-              </li>
-                <li class="icon-outter-wrapper">
-                <a target="_blank" href="mailto:jack_mackinnon@hotmail.com" class="icon-wrapper">
-                  <img class="icon" src='./images/Email_pink.png' onmouseover="this.src='./images/Email_blue.png';" onmouseout="this.src='./images/Email_pink.png';" />
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+      <div class="footer-content">
+        <p>Jack MacKinnon - 2019</p>
+        <nav class="footer-icon-list">
+          <ul class="icon-list">
+            <li>
+              <a href="https://www.linkedin.com/in/jack-mackinnon/" target="_blank">
+                <img class="icon" src="./images/Footer_Icons/LinkedIn_pink.png" onmouseover="this.src='./images/Footer_Icons/LinkedIn_blue.png';" onmouseout="this.src='./images/Footer_Icons/LinkedIn_pink.png';"/>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/JackMacKinnon" target="_blank">
+                <img class="icon" src='./images/Footer_Icons/GitHub_pink.png' onmouseover="this.src='./images/Footer_Icons/GitHub_blue.png';" onmouseout="this.src='./images/Footer_Icons/GitHub_pink.png';"/>
+              </a>
+            </li>
+              <li>
+              <a target="_blank" href="mailto:jack_mackinnon@hotmail.com">
+                <img class="icon" src='./images/Footer_Icons/Email_pink.png' onmouseover="this.src='./images/Footer_Icons/Email_blue.png';" onmouseout="this.src='./images/Footer_Icons/Email_pink.png';"/>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </footer>
+  <script>
+    var slideIndex = [1,1,1];
+    var slideId = ["tmmc_imgs", "stac_imgs", "dalsa_imgs"];
+    var slideIdBullet = ["tmmc_bul", "stac_bul", "dalsa_bul"];
+    showDivs(1, 0);
+    showDivs(1, 1);
+    showDivs(1, 2);
+
+    function plusDivs(n, no) {
+      showDivs(slideIndex[no] += n, no);
+    }
+
+    function currentDiv(n, no) {
+      showDivs(slideIndex[no] = n, no);
+    }
+
+    function showDivs(n, no) {
+      var i;
+      var x = document.getElementsByClassName(slideId[no]);
+      var dots = document.getElementsByClassName(slideIdBullet[no]);
+      if (n > x.length) {slideIndex[no] = 1}
+      if (n < 1) {slideIndex[no] = x.length}
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace("w3-blue", "");
+      }
+      x[slideIndex[no]-1].style.display = "block";
+      dots[slideIndex[no]-1].className += " w3-blue";
+    }
+    </script>
 </body>
 </html>

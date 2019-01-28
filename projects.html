@@ -6,6 +6,7 @@
     <meta name="description" content="Personal website of Jack MacKinnon"/>
     <meta name="author" content="Jack MacKinnon"/>
     <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" href="w3.css">
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"/>
 </head>
@@ -13,7 +14,7 @@
   <header class="banner">
     <div class="banner-container">
       <div class="page-title">
-        <a href="index.html" style="color: #141B1D;">Jack MacKinnon</a>
+        <a href="./index.html" style="color: #141B1D;">Jack MacKinnon</a>
       </div>
       <nav>
         <div class="nav-mobile">
@@ -27,13 +28,18 @@
               <button class="btn-no-outline shadow-none">About</button>
             </a>
           </li>
+          <!--li>
+            <a href="education.html">
+              <button class="btn-no-outline shadow-none">Education</button>
+            </a>
+          </li-->
           <li>
             <a href="work-experience.html">
               <button class="btn-no-outline shadow-none">Work Experience</button>
             </a>
           </li>
           <li>
-            <a href="projects.html">
+            <a href="#">
               <button class="btn-no-outline shadow-none">Projects</button>
             </a>
           </li>
@@ -50,41 +56,236 @@
         </nav>
     </div>
   </header>
+  <div class="pre-content">
+    <p>Personal projects and university design teams&nbsp;</p>
+  </div>
   <section class="page-content">
     <div class="page-content-inner-wrapper">
-      <div class="pre-content">
-        <p>Projects page under construction!!&nbsp;</p>
-        <p>Applications are time consuming..&nbsp;</p>
-        <p>01.25.2019.</p>
+      <div class="page-content-wrapper">
+        <div class="content-layout1">
+          <p class="topic-heading">Personal Website</p>
+          <p class="topic-subheading">Self-Designed and Developed - 01/19-Present</p>
+          <p>
+            As a personal project, I decided to design and develop my own
+            personal website... I hope you like it.
+          </p>
+          <p>
+            Making the decision to delve deeper into software, specifically
+            Computer Vision, Artificial Intelligence, Robotic Perception and
+            Path Planning, having a way to track project progress and applicable
+            courses is extremely beneficial for both myself and prospective
+            employers.
+          </p>
+          <p>
+            So here we are, on my website. I programmed it using HTML and CSS;
+            the basics. In conjunction to the fundamentals, I use a pinch of
+            JavaScript here and there. The JavaScript comes into play for the
+            footer icons "switching color" and the images displayed as a gallery.
+          </p>
+          <p>
+            So, enjoy your stay, make yourself at home, and be sure to check back
+            every-so-often; this is a working document after all! :)
+          </p>
+        </div>
+        <div class="content-image-space-layout1">
+          <img class="website_imgs" src='./images/Projects/Personal_Website/html_development.png' style="max-width:25em" style="display:none" style="position:relative"/>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="page-content">
+    <div class="page-content-inner-wrapper">
+      <div class="page-content-wrapper">
+        <div class="content-image-space-layout2">
+          <img class="uwreact_imgs" src='./images/Projects/UW_REACT/UW_REACT_logo.png' style="max-width:25em" style="display:none" style="position:relative"/>
+        </div>
+        <div class="content-layout2">
+          <p class="topic-heading">UW REACT</p>
+          <p class="topic-subheading">Perception and Path Planning - 01/19-Present</p>
+          <p>
+            <a target="_blank" href="https://uwreact.ca">UW REACT</a> is a design team at the University of Waterloo where we
+            develop fully autonomous robots to compete against one another in a
+            variety of games/challenges.
+          </p>
+          <p>
+            I joined the team in its infancy and I plan to take on a substantial
+            role in developing both the Perception and Path Planning sub-teams.
+          </p>
+          <p>
+            More to come on UW REACT when the team gains some momentum!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="page-content">
+    <div class="page-content-inner-wrapper">
+      <div class="page-content-wrapper">
+        <div class="content-layout1">
+          <p class="topic-heading">WATonomous</p>
+          <p class="topic-subheading">Vehicle Dynamics/Feedback Controller - 09/17-12/18</p>
+          <p>
+            <a target="_blank" href="https://watonomous.ca/">WATonomous</a> is the University of
+            Waterloo's team in <a target="_blank" href="https://www.sae.org/attend/student-events/autodrive-challenge/"><em>GM's AutoDrive Challenge</em></a>, hosted by <em>SAE</em>. WATonomous is converting
+            a <a target="_blank" href="https://www.chevrolet.ca/bolt-ev-electric-vehicle.html">2017 Chevrolet Bolt</a>
+            into a fully autonomous vehicle.
+          </p>
+          <p>
+            I spent a year and four months with WATonomous and I focused on the Vehicle
+            Dynamics/Feedback controller of the Bolt. Over the course of four terms
+            (4 months/term), I held the positions of "Core Member", "Sub-Team Lead",
+            "Core Member" and "Mentor".
+          </p>
+          <p>
+            The responsibility of Vehicle Dynamics/Feedback controller is to determine the
+            trajectory of the vehicle as it follows an inputted local path. A local path is
+            a series of vehicle states (x, y, heading) that determine the state of
+            the vehicle for the near future. In other words, we're handed a vector
+            of <em>Path_Point</em>s which specify an x, y and heading for each state
+            along a 2D plot (think birds-eye-view of the vehicle). With the first
+            point containing information about the current velocity and acceleration,
+            and the last point containing information about the requested final
+            velocity and acceleration, it is up to us to fill in the details; point-to-point.
+            We also have competition constraints on the maximum and minimum values of
+            velocity, acceleration and jerk to abide by.
+          </p>
+          <p>
+            After working out details with other sub-teams, we came to a conclusion
+            about the algorithmic approach we should take to map out the details.
+            We decided on using a recursive function to traverse the vector, assigning
+            a "maximum-value" attribute to jerk and working backwards. We find acceleration
+            and velocity by integrating over the time taken between points. Once these values
+            are determined, we check to make sure we haven't broken any constraints.
+            If we have, we reduce the jerk and try again. If we can't find a jerk value
+            that satisfies motion for the vehicle state, we return to the previous
+            point and reduce that jerk and try again.
+          </p>
+          <p>
+            That's just a quick and dirty summary of the kind of work I did with
+            WATonomous. I'm sure it was a little confusing, so <a target="_blank" href="mailto:jack_mackinnon@hotmail.com">contact me</a> and
+            we can work through the details!
+          </p>
+        </div>
+        <div class="content-image-space-layout1">
+          <img class="wato_imgs" src='./images/Projects/WATonomous/WATo.png' style="width: 100%" style="height: 100%" style="display:none" style="position:relative" style="object-fit:contain"/>
+          <img class="wato_imgs" src='./images/Projects/WATonomous/WATo_bolt.png' style="width: 100%" style="height: 100%" style="display:none" style="position:relative" style="object-fit:contain"/>
+          <img class="wato_imgs" src='./images/Projects/WATonomous/WATo_Ion.png' style="width: 100%" style="height: 100%" style="display:none" style="position:relative" style="object-fit:contain"/>
+          <img class="wato_imgs" src='./images/Projects/WATonomous/WATo_Kalli_Ansh.png' style="width: 100%" style="height: 100%" style="display:none" style="position:relative" style="object-fit:contain"/>
+          <div class="w3-center w3-container w3-section w3-large w3-text-black w3-display-bottommiddle" style="width:100%">
+            <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1, 1)">&#10094;</div>
+            <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1, 1)">&#10095;</div>
+            <span class="w3-badge wato_bul w3-border w3-transparent w3-hover-pink" onclick="currentDiv(1, 1)"></span>
+            <span class="w3-badge wato_bul w3-border w3-transparent w3-hover-pink" onclick="currentDiv(2, 1)"></span>
+            <span class="w3-badge wato_bul w3-border w3-transparent w3-hover-pink" onclick="currentDiv(3, 1)"></span>
+            <span class="w3-badge wato_bul w3-border w3-transparent w3-hover-pink" onclick="currentDiv(4, 1)"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="page-content">
+    <div class="page-content-inner-wrapper">
+      <div class="page-content-wrapper">
+        <div class="content-image-space-layout2">
+          <img class="checkers_imgs" src='./images/Projects/Checkers_Robot/' style="max-width:25em" style="display:none" style="position:relative"/>
+          <img class="checkers_imgs" src='./images/Projects/Checkers_Robot/' style="max-width:25em" style="display:none" style="position:relative"/>
+          <div class="w3-center w3-container w3-section w3-large w3-text-black w3-display-bottommiddle" style="width:100%">
+            <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1, 0)">&#10094;</div>
+            <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1, 0)">&#10095;</div>
+            <span class="w3-badge checkers_bul w3-border w3-transparent w3-hover-pink" onclick="currentDiv(1, 0)"></span>
+            <span class="w3-badge checkers_bul w3-border w3-transparent w3-hover-pink" onclick="currentDiv(2, 0)"></span>
+          </div>
+        </div>
+        <div class="content-layout2">
+          <p class="topic-heading">Autonomous Checkers-Playing Robot</p>
+          <p class="topic-subheading">Project Manager - 10/17-12/17</p>
+          <p>
+            At the end of my 1A term my class was assigned a small design project.
+            Using a <a target="_blank" href="https://www.lego.com/en-us/mindstorms">LEGO MINDSTORM</a>, design a robotic system.
+          </p>
+          <p>
+            Very general, very broad. Three classmates and I teamed up and begun
+            to brainstorm different projects we could do. What did we settle on?
+            An autonomous checkers-playing robot, naturally.
+          </p>
+
+          <p>
+            Our design leveraged a 3D grid system to scan and traverse the board
+            (think 3D printer). We packaged everything required to move around the
+            board within a "carriage". This carriage housed two color sensors,
+            a motor to drive across the board and an electromagnet. Did I mention
+            we chose to grab pieces by using an electromagnet? This whole carriage
+            rested on a plank of wood that in-tern, rested on a wooden frame. Two
+            motors powered larger wheels on the frame to move the entire wooden plank
+            with the carriage.
+          </p>
+          <p>
+            I took on the role of programming the system's movement. This includes
+            making measurements of the board and other features to store in the
+            memory of the robot. Movements span from driving the robot across the
+            board, to descending and ascending the electromagnet, to supplying power
+            to and from the electromagnet to engage and disengage the pieces.
+          </p>
+        </div>
       </div>
     </div>
   </section>
   <footer class="footer">
     <div class="footer-wrapper">
-      <div class="footer-inner-wrapper">
-        <div class="footer-content">
-          <nav class="footer-icon-list">
-            <ul class="icon-list">
-              <li class="icon-outter-wrapper">
-                <a href="https://www.linkedin.com/in/jack-mackinnon/" target="_blank" class="icon-wrapper">
-                  <img class="icon" src="./images/LinkedIn_pink.png" onmouseover="this.src='./images/LinkedIn_blue.png';" onmouseout="this.src='./images/LinkedIn_pink.png';" />
-                </a>
-              </li>
-              <li class="icon-outter-wrapper">
-                <a href="https://github.com/JackMacKinnon" target="_blank" class="icon-wrapper">
-                  <img class="icon" src='./images/GitHub_pink.png' onmouseover="this.src='./images/GitHub_blue.png';" onmouseout="this.src='./images/GitHub_pink.png';" />
-                </a>
-              </li>
-                <li class="icon-outter-wrapper">
-                <a target="_blank" href="mailto:jack_mackinnon@hotmail.com" class="icon-wrapper">
-                  <img class="icon" src='./images/Email_pink.png' onmouseover="this.src='./images/Email_blue.png';" onmouseout="this.src='./images/Email_pink.png';" />
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+      <div class="footer-content">
+        <p>Jack MacKinnon - 2019</p>
+        <nav class="footer-icon-list">
+          <ul class="icon-list">
+            <li>
+              <a href="https://www.linkedin.com/in/jack-mackinnon/" target="_blank">
+                <img class="icon" src="./images/Footer_Icons/LinkedIn_pink.png" onmouseover="this.src='./images/Footer_Icons/LinkedIn_blue.png';" onmouseout="this.src='./images/Footer_Icons/LinkedIn_pink.png';" />
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/JackMacKinnon" target="_blank">
+                <img class="icon" src='./images/Footer_Icons/GitHub_pink.png' onmouseover="this.src='./images/Footer_Icons/GitHub_blue.png';" onmouseout="this.src='./images/Footer_Icons/GitHub_pink.png';" />
+              </a>
+            </li>
+              <li>
+              <a target="_blank" href="mailto:jack_mackinnon@hotmail.com">
+                <img class="icon" src='./images/Footer_Icons/Email_pink.png' onmouseover="this.src='./images/Footer_Icons/Email_blue.png';" onmouseout="this.src='./images/Footer_Icons/Email_pink.png';" />
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </footer>
+  <script>
+    var slideIndex = [1,1];
+    var slideId = ["checkers_imgs", "wato_imgs"];
+    var slideIdBullet = ["checkers_bul", "wato_bul"];
+    showDivs(1, 0);
+    showDivs(1, 1);
+
+    function plusDivs(n, no) {
+      showDivs(slideIndex[no] += n, no);
+    }
+
+    function currentDiv(n, no) {
+      showDivs(slideIndex[no] = n, no);
+    }
+
+    function showDivs(n, no) {
+      var i;
+      var x = document.getElementsByClassName(slideId[no]);
+      var dots = document.getElementsByClassName(slideIdBullet[no]);
+      if (n > x.length) {slideIndex[no] = 1}
+      if (n < 1) {slideIndex[no] = x.length}
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace("w3-blue", "");
+      }
+      x[slideIndex[no]-1].style.display = "block";
+      dots[slideIndex[no]-1].className += " w3-blue";
+    }
+    </script>
 </body>
 </html>
