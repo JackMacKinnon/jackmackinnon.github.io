@@ -304,11 +304,25 @@ button:hover, .btn:hover {
 }
 
 /* END OF HOMEPAGE */
-/* ABOUT PAGE STYLE */
+/* PROJECTS PAGE STYLE */
 
+.checkers-content{
+  max-height: 20em;
+  max-width: 36em;
+  text-align: left;
+  float: right;
+  padding-left: 2em;
+  overflow: scroll;
+  position: relative;
+}
 
-
-/* END OF ABOUT PAGE*/
+@media screen and (max-width: 500px) {
+  .checkers_imgs{
+    max-width: none;
+    width: 100%;
+  }
+}
+/* END OF PROJECTS PAGE*/
 
 /* FOOTER PAGE STYLE */
 
